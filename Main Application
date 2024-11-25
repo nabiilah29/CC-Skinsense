@@ -1,0 +1,27 @@
+from fastapi import FastAPI, Depends
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
+from .database import Base, engine
+from .auth import get_db, register_user, authenticate_user
+
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI()
+
+class RegisterRequest(BaseModel):
+    username: str
+    password: str
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+@app.post("/register")
+def register(request: RegisterRequest, db: Session = Depends(get_db)):
+    user = register_user(db, request.username, request.password)
+    return {"message": "User registered successfully", "user_id": user.id}
+
+@app.post("/login")
+def login(request: LoginRequest, db: Session = Depends(get_db)):
+    user = authenticate_user(db, request.username, request.password)
+    return {"message": "Login successful", "user_id": user.id}
