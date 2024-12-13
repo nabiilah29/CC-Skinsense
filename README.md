@@ -1,6 +1,6 @@
-SkinGorithm - Personalized Skincare Recommendation System
+Skinsense - Personalized Skincare Recommendation System
 Project Overview
-SkinGorithm is a comprehensive skincare recommendation system that combines a machine learning model with a robust backend API to provide personalized skincare advice.
+Skinsense is a comprehensive skincare recommendation system that combines a machine learning model with a robust backend API to provide personalized skincare advice.
 
 Backend API Endpoints
 1. User Management
