@@ -1,17 +1,35 @@
-Current Progress (Cloud Computing Path)
-As part of the Cloud Computing track, the following tasks have been completed and are in progress:
+SkinGorithm - Personalized Skincare Recommendation System
+Project Overview
+SkinGorithm is a comprehensive skincare recommendation system that combines a machine learning model with a robust backend API to provide personalized skincare advice.
 
-Completed:
-Google Cloud Architecture Activation:
-The cloud environment has been set up using Google Cloud Platform (GCP).
-Services activated include:
-Cloud Run: For running containerized applications.
-Cloud Storage: For media and static file storage.
-Cloud SQL: For relational database management.
-Cloud IAM: For access control.
-In Progress:
-Backend System Development:
-Developing the authentication module for register/login system:
-Firebase Authentication is being integrated for secure and efficient user management.
-A RESTful API is being designed to handle user authentication processes.
-Backend is developed using Python (FastAPI) for lightweight and high-performance execution.
+Backend API Endpoints
+1. User Management
+
+User Registration: /User/userRegister
+User Login: /Login/userLogin
+Get User Details: /User/getUserByUsername
+Update User Profile: /User/updateUser
+Change Password: /User/changePassword
+
+2. Ingredient Management
+
+Insert Ingredients: /Ingredient/InsertIngredients
+Get All Ingredients: /Ingredient/getAllIngredient
+Get Ingredient by Name: /Ingredient/getIngredByName
+
+3. Alarm System
+
+Insert Alarm: /Alarm/insertAlarm
+Get Alarms by Username: /Alarm/getAlarmByUsername
+Get Alarms by Date: /Alarm/getAlarmByDate
+
+4. Scan History
+
+Insert Scan History: /History/insertHistory
+Get Scan History by Username: /History/getHistoryByUsername
+Get Scan History by Date: /History/getHistoryByUsernameDate
+
+API Base URL
+https://dynamic-reef-344016.uc.r.appspot.com
+Authentication
+Most endpoints require Bearer Token authentication obtained from /Login/userLogin
